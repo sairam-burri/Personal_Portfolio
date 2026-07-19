@@ -8,7 +8,7 @@ import { Tag } from '../ui/Tag'
 
 export function Hero() {
   return (
-    <section id="home" className="scroll-mt-20 pb-14 pt-12 sm:pb-20 sm:pt-16">
+    <section id="home" className="scroll-mt-20 py-14 sm:py-20">
       <Container>
         <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:items-center lg:gap-16">
           <div className="order-2 lg:order-1">
