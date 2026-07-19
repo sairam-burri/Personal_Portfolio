@@ -15,14 +15,36 @@ const contactMethods = [
   { label: 'GitHub', value: 'github.com/sairam-burri', href: profile.github, icon: GithubIcon, external: true },
 ]
 
+type Status = 'idle' | 'submitting' | 'success' | 'error'
+
 export function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState<Status>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault()
-    setSubmitted(true)
-    setFormData({ name: '', email: '', message: '' })
+    setStatus('submitting')
+    setErrorMessage('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}))
+        throw new Error(data.error || 'Something went wrong. Please try again.')
+      }
+
+      setStatus('success')
+      setFormData({ name: '', email: '', message: '' })
+    } catch (error) {
+      setStatus('error')
+      setErrorMessage(error instanceof Error ? error.message : 'Something went wrong. Please try again.')
+    }
   }
 
   return (
@@ -72,12 +94,17 @@ export function Contact() {
             <Card>
               <h3 className="text-base font-bold text-ink">Send a Message</h3>
 
-              {submitted ? (
+              {status === 'success' ? (
                 <p role="status" className="mt-6 rounded-xl bg-emerald/10 p-4 text-sm text-emerald">
                   Thanks for reaching out! I&apos;ll get back to you soon.
                 </p>
               ) : (
                 <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+                  {status === 'error' && (
+                    <p role="alert" className="rounded-xl bg-orange/10 p-4 text-sm text-orange">
+                      {errorMessage}
+                    </p>
+                  )}
                   <div>
                     <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-ink-soft">
                       Name
@@ -123,8 +150,8 @@ export function Contact() {
                       className="w-full resize-none rounded-lg border border-hairline bg-surface px-4 py-2.5 text-sm text-ink placeholder:text-ink-faint"
                     />
                   </div>
-                  <Button type="submit" className="w-full">
-                    Send Message
+                  <Button type="submit" className="w-full disabled:cursor-not-allowed disabled:opacity-60" disabled={status === 'submitting'}>
+                    {status === 'submitting' ? 'Sending…' : 'Send Message'}
                   </Button>
                 </form>
               )}

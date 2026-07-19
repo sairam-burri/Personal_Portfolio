@@ -25,6 +25,7 @@ type ButtonAsButton = CommonProps & {
   rel?: never
   onClick?: () => void
   type?: 'button' | 'submit'
+  disabled?: boolean
 }
 
 type ButtonProps = ButtonAsLink | ButtonAsButton
@@ -62,6 +63,7 @@ export function Button(props: ButtonProps) {
     <motion.button
       type={(props as ButtonAsButton).type ?? 'button'}
       onClick={(props as ButtonAsButton).onClick}
+      disabled={(props as ButtonAsButton).disabled}
       className={classes}
       whileTap={{ scale: 0.97 }}
     >
