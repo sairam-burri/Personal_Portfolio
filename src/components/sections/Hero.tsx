@@ -8,7 +8,7 @@ import { Tag } from '../ui/Tag'
 
 export function Hero() {
   return (
-    <section id="home" className="scroll-mt-20 pb-20 pt-16 sm:pb-28 sm:pt-24">
+    <section id="home" className="scroll-mt-20 pb-14 pt-12 sm:pb-20 sm:pt-16">
       <Container>
         <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:items-center lg:gap-16">
           <div className="order-2 lg:order-1">
@@ -66,18 +66,18 @@ export function Hero() {
           </div>
 
           <Reveal delay={0.1} className="order-1 flex justify-center lg:order-2 lg:justify-end">
-            <div className="relative">
+            <div className="relative aspect-square w-56 sm:w-64 lg:w-80">
               <div
-                className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-cyan/20 via-purple/20 to-transparent blur-2xl"
+                className="absolute -inset-3 rounded-full bg-gradient-to-br from-cyan/25 via-purple/25 to-transparent blur-2xl"
                 aria-hidden="true"
               />
               <img
                 src={profileImage}
                 alt={`Portrait of ${profile.name}`}
-                width={400}
-                height={500}
+                width={420}
+                height={420}
                 loading="eager"
-                className="relative w-56 rounded-[2rem] border border-hairline object-cover shadow-2xl sm:w-64 lg:w-80"
+                className="relative aspect-square w-full rounded-full border border-hairline object-cover shadow-2xl"
               />
             </div>
           </Reveal>

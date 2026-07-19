@@ -5,7 +5,7 @@ import { Reveal } from '../ui/Reveal'
 
 export function About() {
   return (
-    <section id="about" className="scroll-mt-20 py-20 sm:py-28">
+    <section id="about" className="scroll-mt-20 py-14 sm:py-20">
       <Container>
         <SectionHeading eyebrow="About" title="Who I am" />
         <Reveal className="mx-auto max-w-3xl space-y-5 text-base leading-relaxed text-ink-soft sm:text-lg">

@@ -6,7 +6,7 @@ import { Reveal } from '../ui/Reveal'
 
 export function Experience() {
   return (
-    <section id="experience" className="scroll-mt-20 py-20 sm:py-28">
+    <section id="experience" className="scroll-mt-20 py-14 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Career Journey"

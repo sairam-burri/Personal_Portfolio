@@ -8,7 +8,7 @@ import { Tag } from '../ui/Tag'
 
 export function Education() {
   return (
-    <section id="education" className="scroll-mt-20 py-20 sm:py-28">
+    <section id="education" className="scroll-mt-20 py-14 sm:py-20">
       <Container>
         <SectionHeading eyebrow="Academic Background" title="Education" />
 

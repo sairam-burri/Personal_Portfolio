@@ -16,7 +16,7 @@ const projectIcons: Record<string, LucideIcon> = {
 
 export function Projects() {
   return (
-    <section id="projects" className="scroll-mt-20 py-20 sm:py-28">
+    <section id="projects" className="scroll-mt-20 py-14 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Featured Work"

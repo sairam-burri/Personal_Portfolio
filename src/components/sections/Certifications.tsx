@@ -7,7 +7,7 @@ import { Card } from '../ui/Card'
 
 export function Certifications() {
   return (
-    <section id="certifications" className="scroll-mt-20 py-20 sm:py-28">
+    <section id="certifications" className="scroll-mt-20 py-14 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Credentials"

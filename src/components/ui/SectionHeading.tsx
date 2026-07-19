@@ -10,7 +10,7 @@ export function SectionHeading({
   description?: string
 }) {
   return (
-    <Reveal className="mx-auto mb-14 max-w-2xl text-center sm:mb-16">
+    <Reveal className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
       <span className="inline-block rounded-full border border-cyan/30 bg-cyan/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-cyan">
         {eyebrow}
       </span>

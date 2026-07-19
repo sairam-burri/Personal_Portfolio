@@ -7,7 +7,7 @@ import { Tag } from '../ui/Tag'
 
 export function Skills() {
   return (
-    <section id="skills" className="scroll-mt-20 py-20 sm:py-28">
+    <section id="skills" className="scroll-mt-20 py-14 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Technical Toolkit"
