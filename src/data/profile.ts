@@ -14,7 +14,7 @@ export const profile = {
   location: 'Mississauga, Ontario, Canada',
   email: 'burrisairam2000@gmail.com',
   phone: '+1 343-552-8696',
-  linkedin: 'https://www.linkedin.com/in/sai-ram-burri',
+  linkedin: 'https://www.linkedin.com/in/sairamburri',
   github: 'https://github.com/sairam-burri',
   siteUrl: 'https://personal-portfolio-peach-sigma-87.vercel.app/',
   resumeUrl: resumePDF,

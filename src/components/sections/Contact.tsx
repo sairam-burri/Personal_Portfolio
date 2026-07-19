@@ -11,7 +11,7 @@ import { GithubIcon, LinkedinIcon } from '../ui/BrandIcons'
 const contactMethods = [
   { label: 'Email', value: profile.email, href: `mailto:${profile.email}`, icon: Mail, external: false },
   { label: 'Phone', value: profile.phone, href: `tel:${profile.phone.replace(/[^+\d]/g, '')}`, icon: Phone, external: false },
-  { label: 'LinkedIn', value: 'linkedin.com/in/sai-ram-burri', href: profile.linkedin, icon: LinkedinIcon, external: true },
+  { label: 'LinkedIn', value: 'linkedin.com/in/sairamburri', href: profile.linkedin, icon: LinkedinIcon, external: true },
   { label: 'GitHub', value: 'github.com/sairam-burri', href: profile.github, icon: GithubIcon, external: true },
 ]
 
